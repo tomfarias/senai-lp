@@ -1,20 +1,21 @@
 const frm = document.querySelector("form");
-const resp1 = document.querySelector("h3");
-const resp2 = document.querySelector("h4");
+const resp1 = document.querySelector("outResp1");
+const resp2 = document.querySelector("inNota2");
+const resp3 = document.querySelector("outresp3");
 
 frm.addEventListener("submit", (e) => {
 
-    const titulo = frm.inTitulo.value; // entrada de dados
+    const veiculo = frm.inVeiculo.value; // obter os conteúdo dos campos
 
-    const duracao = frm.inDuracao.value; // entrada de dados
+    const preco = Number(frm.inpreco.value); // 
 
-    const horas = Math.floor(duracao / 60); // processamento
+    const entrada = preco * 0.50 // calcular valor da entrada
 
-    const minutos = duracao % 60; // processamento
+    const parcela = (preco * 0.50) / 12 // ... e das parcelas
 
-    resp1.innerText = titulo; // saida
-
-    resp2.innerText = `${horas} hora(s) e ${minutos} minuto(s)`; // saida
+    resp1.innerText = 'Promocao: $ {veiculo}'  // exibir as respostas
+    resp2.innerText = `Entrada de R$: ${Entrada.tofixed(2)}`
+    resp3.innerText = `+12x de R$: ${parcela.toFixed(2)}`
 
     e.preventDefault();
 })
